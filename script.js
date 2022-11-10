@@ -1,15 +1,8 @@
-const panels = document.querySelectorAll('.panel')
+const labels = document.querySelectorAll('.form-control label')
 
-panels.forEach( panel => {
-    panel.addEventListener('click', () => {
-        removeActiveClasses()
-        panel.classList.add('active')
-    })
+labels.forEach(label => {
+    label.innerHTML = label.innerText
+        .split('')
+        .map((letter, idx) => `<span>${ letter }</span>`)
+        .join('')
 })
-
-function removeActiveClasses() {
-    panels.forEach( panel => {
-        panel.classList.remove('active')
-    })
-}
-
